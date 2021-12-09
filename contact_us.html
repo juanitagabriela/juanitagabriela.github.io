@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/contact_us.css">
+        <link href='https://unpkg.com/boxicons@2.1.0/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
+        <title>Document</title>
+    </head>
+<body>
+    <div class="sticky-top">
+        <ul class="container-fluid p-2" style="background: red;">
+            <div class="container d-flex align-items-center justify-content-end">
+                <li class="text-uppercase text-white"
+                    style="list-style: none; margin-right: 2.2em; font-size: 0.7em;">
+                    pt. mayora indah tbk.
+                </li>
+                <li style="list-style: none; margin-right: 0.5em;">
+                    <a href="#">
+                        <img src="image/id.png">
+                    </a>
+                </li>
+                <li style="list-style: none;">
+                    <a href="#">
+                        <img src="image/en.png">
+                    </a>
+                </li>
+            </div>
+        </ul>
+
+        <nav class="navbar navbar-expand-lg p-4 navi">
+            <div class="container">
+                    <a class="nav-link logo" href="#"><img src="image/logo.png"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                        <span><img src="image/navbar-toggler.svg" style="width: 40px;"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="biodata.html">BIODATA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact_us.html">CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="free.html">FREE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://fti.unai.edu/" class="text-uppercase">FTI UNAI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://unai.edu/" class="text-uppercase">UNAI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" class="text-uppercase"><i class='bx bx-search' style="font-weight: 700;"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container mt-3 contact-form">
+    <form action="#" class="p-4">
+        <h1 class="text-center mb-5" style="font-weight: 500px; color:red;">FORM</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label for="nama_lengkap">Nama Lengkap :</label>
+                    <input type="text" class="form-control" id="nama_lengkap" placeholder="Masukkan Nama Lengkap" name="nama_lengkap" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email :</label>
+                    <input type="email" class="form-control" id="email" placeholder="Masukkan Email" name="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="username">Username :</label>
+                    <input type="text" class="form-control" id="username" placeholder="Masukkan Username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password">Password :</label>
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan Password" name="password" required>
+                </div>
+            <!-- <div class="col-lg-6"> -->
+                <div class="mb-3">
+                    <label for="address">Alamat :</label>
+                    <input type="textarea" class="form-control" id="alamat" placeholder="Masukkan alamat Anda" name="alamat" required>
+                </div>
+                <div class="mb-3">
+                    <label for="agama">Agama :</label>
+                        <div>
+                            <select class="form-control" name="agama" id="agama" required>
+                                <option value="">Pilih Agama</option>
+                                <option value="kristen">Kristen</option>
+                                <option value="katolik">Islam</option>
+                                <option value="islam">Katolik</option>
+                                <option value="hindu">Buddha</option>
+                                <option value="buddha">Hindu</option>
+                                <option value="konghucu">Konghucu</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="mb-3 g-gender">
+                    <label for="gender">Jenis Kelamin :</label>
+                    <div class="form-control d-flex" style="border: 1px solid white;">
+                        <div><input type="radio" name="gender" value="laki-laki" required>Laki-laki</div>
+                        <div><input type="radio" name="gender" value="perempuan" required>Perempuan</div>
+                    </div>
+                </div>
+                <div class="mb-3 class g-hobby">
+                    <label for="hobby">Hobby :</label>
+                        <div class="form-control d-flex" style="border: 1px solid white;">
+                            <div><input type="checkbox" name="hobby" value="nyanyi">Bernyanyi</div>
+                            <div><input type="checkbox" name="hobby" value="game">Bermain Game</div>
+                            <div><input type="checkbox" name="hobby" value="olahraga">Olahraga</label></div>
+                            <div><input type="checkbox" name="hobby" value="lainnya">Etc</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <span class="g-button">
+            <div class="d-flex justify-content-end">
+                <input type="submit" class="btn btn-outline-danger" value="Submit">
+                <input type="reset" class="btn btn-outline-danger" value="Hapus">
+        </span>
+    </div>
+    </form>
+</div>
+
+<div class="container-fluid footer mt-5 pb-5"
+style="background: red;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 p-3">
+                <div class="text-center"
+                style="background: #fff;
+                border-radius: 10px;">
+                    <img src="image/logo.png" alt="img" class="p-3">
+                </div>
+                <p class="mt-4"
+                style="font-weight: 600;">PT. MAYORA INDAH TBK.</p>
+                <p>Gedung Mayora Jl. Tomang Raya Kav 21 - 23, Jakarta Barat</p>
+                <p><span style="font-weight: 600;">P.</span> +62 (21) 806 377 04<br><span style="font-weight: 600;">E.</span> consumer@mayora.co.id</p>
+            </div>
+
+            <div class="col-lg-3 p-3">
+                <ul>
+                    <li>PERUSAHAAN</li>
+                    <li><a href="#">Sekilas Tentang Mayora</a></li>
+                    <li><a href="#">Struktur Organisasi PT Mayora Indah Tbk.</a></li>
+                    <li><a href="#">Struktur kepemilikan Mayora Indah</a></li>
+                </ul>
+                <br><br><br><br><br>
+                <ul>
+                    <li>TATA KELOLA PERUSAHAAN</li>
+                    <li><a href="#">Pedoman Kerja</a></li>
+                    <li><a href="#">Piagam Unit Audit Internal</a></li>
+                    <li><a href="#">Kode Etik Perusahaan</a></li>
+                    <li><a href="#">Komite Nominasi dan Remunerasi</a></li>
+                    <li><a href="#">Kebijakan Manajemen Risiko</a></li>
+                    <li><a href="#">Kebijakan Mekanisme Sistim</a></li>
+                    <li><a href="#">Laporan Pelanggan</a></li>
+                    <li><a href="#">Kebijakan Pemenuhan Hak Kreditur</a></li>
+                    <li><a href="#">Kebijakan Seleksi Pemasok & Vendor</a></li>
+                    <li><a href="#">Anggaran Dasar Mayora</a></li>
+                </ul>
+                <br>
+                <ul class="pb-5">
+                    <li>KARIER</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 p-3">
+                <ul>
+                    <li>MEREK</li>
+                    <li><a href="#">Biskuit</a></li>
+                    <li><a href="#">Kembang Gula</a></li>
+                    <li><a href="#">Wafer</a></li>
+                    <li><a href="#">Cokelat</a></li>
+                    <li><a href="#">Kopi</a></li>
+                    <li><a href="#">Makanan Kesehatan</a></li>
+                </ul>
+                <br><br><br>
+                <ul>
+                    <li>TANGGUNG JAWAB SOSIAL</li>
+                    <li><a href="#">Lingkungan Hidup</a></li>
+                    <li><a href="#">Praktik Ketenagakerjaan, Kesehatan dan Keselamatan Kerja</a></li>
+                    <li><a href="#">Pengembangan Sosila dan Kemasyarakatan</a></li>
+                    <li><a href="#">Tanggung jawab Produk</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 p-3">
+                <ul>
+                    <li>INFORMASI BAGI INVESTOR</li>
+                    <li><a href="#">Laporan Tahunan Mayora</a></li>
+                    <li><a href="#">Informasi keuangan</a></li>
+                    <li><a href="#">Informasi Rapat Umum Pemegang Saham Mayora</a></li>
+                    <li><a href="#">Informasi Saham Mayora</a></li>
+                    <li><a href="#">Informasi Obligasi Mayora</a></li>
+                    <li><a href="#">Informasi Dividen PT Mayora Indah, Tbk</a></li>
+                    <li><a href="#">Keterbukaan Informasi</a></li>
+                </ul>
+                <ul>
+                    <li>BERITA</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid p-4 copyright">
+    <div class="container">
+        <div>Copyright © 2018, PT Mayora Indah Tbk. All rights reserved.</div>
+        <div>
+            <div><a href="#">Search</a></div>
+            <div><a href="#">Contact Us</a></div>
+            <div><a href="#">Privacy Policy</a></div>
+            <div><a href="#">Terms & Conditions</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
