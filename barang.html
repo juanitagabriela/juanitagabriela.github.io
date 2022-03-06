@@ -15,8 +15,7 @@
     <div class="navbar navbar-expand-sm">
         <div class="container-fluid">
             <ul class="navbar-nav">
-                <li class="title">Pemakaian Music Center
-                </li>
+                <li class="title">Pemakaian Music Center</li>
             </ul>
             <div class="mx-auto"></div>
             <ul class="navbar-nav navi">
@@ -47,14 +46,14 @@
                       <a href="barang.html" class="dropdown-item">Data Barang</a>
                   </li>
                     <li>
-                        <a href="" class="dropdown-item">Logout</a>
+                        <a href="logout.html" class="dropdown-item">Logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-      <div id="app">
 
+      <div id="app">
         <div class="container">
             <div class="py-5 text-center">
                 <h2>Music Center</h2>
@@ -91,7 +90,6 @@
                     </div>
                   </div>
 
-
                   <div class="col-md-6 mb-3">
                     <label for="tanggalPenggunaanBaarang">Tanggal Penggunaan Barang</label>
                     <input v-model="tanggalPenggunaanBarang" type="datetime-local" class="form-control" id="tanggalPenggunaanBarang">
@@ -99,7 +97,6 @@
                       Valid tanggal penggunaan barang is required.
                     </div>
                   </div>
-
 
             <div class="col-md-12">
                 <h4 class="user mb-3">User Data<button class="btn btn-md btn-primary" v-on:click="resetForm()">Choose Barang</button></h4>
@@ -130,10 +127,7 @@
                 <hr class="mb-4">
                   <button v-if="!editMode && !deleteMode" v-on:click="createBarang" class="btn btn-primary btn-lg btn-block" type="submit">Submit Data</button>
                   <button v-if="editMode" v-on:click="updateBarang" class="btn btn-warning btn-lg btn-block" type="submit">Update Data</button>
-                  <button v-if="deleteMode" v-on:click="deleteBarang" class="btn btn-danger btn-lg btn-block" type="submit">Delete Data</button>
-                  
-                </form>
-              
+                  <button v-if="deleteMode" v-on:click="deleteBarang" class="btn btn-danger btn-lg btn-block" type="submit">Delete Data</button>        
             </div>
 
             <div class="footer mt-3 text-muted text-center text-small">
@@ -143,7 +137,6 @@
                   <li class="list-inline-item"><a href="#">Terms</a></li>
                   <li class="list-inline-item"><a href="#">Support</a></li>
                 </ul>
-              </footer>
             </div>
     </div>
 

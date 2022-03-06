@@ -15,8 +15,7 @@
   <div class="navbar navbar-expand-sm">
     <div class="container-fluid">
         <ul class="navbar-nav">
-            <li class="title">Pemakaian Music Center
-            </li>
+            <li class="title">Pemakaian Music Center</li>
         </ul>
         <div class="mx-auto"></div>
         <ul class="navbar-nav navi">
@@ -47,7 +46,7 @@
                   <a href="barang.html" class="dropdown-item">Data Barang</a>
               </li>
                 <li>
-                    <a href="" class="dropdown-item">Logout</a>
+                    <a href="logout.html" class="dropdown-item">Logout</a>
                 </li>
             </ul>
         </div>
@@ -85,21 +84,21 @@
               </div>
             
 
-            <div class="mb-3">
+                <div class="mb-3">
               <label for="email">Email <span class="text-muted">(Optional)</span></label>
               <input v-model="email" type="email" class="form-control" id="email" placeholder="mine@example.com">
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
-            </div>
+                </div>
 
-            <div class="mb-3">
+              <div class="mb-3">
                 <label for="phone">Phone</label>
                 <input v-model="phone" type="text" class="form-control" id="phone" placeholder="(+62)" value="" required>
-                <div class="invalid-feedback">
+              <div class="invalid-feedback">
                   Valid phone is required.
-                </div>
-            </div>
+              </div>
+              </div>
       
               <div class="col-md-12">
                 <h4 class="user mb-3">User Data  <button class="btn btn-md btn-primary" v-on:click="resetForm()">Create new User </button>
@@ -125,9 +124,9 @@
                       </tr>
                 </table>
 
-                <div v-if="message" class="alert alert-success" role="alert">
+              <div v-if="message" class="alert alert-success" role="alert">
                     {{ message }}
-                </div>
+              </div>
 
                 </div>
             </div>
@@ -136,8 +135,6 @@
                   <button v-if="!editMode && !deleteMode" v-on:click="createUser" class="btn btn-primary btn-lg btn-block" type="submit">Submit Data</button>
                   <button v-if="editMode" v-on:click="updateUser" class="btn btn-warning btn-lg btn-block" type="submit">Update Data</button>
                   <button v-if="deleteMode" v-on:click="deleteUser" class="btn btn-danger btn-lg btn-block" type="submit">Delete Data</button>
-                  
-                </form>
         </div>
     </div>
 
