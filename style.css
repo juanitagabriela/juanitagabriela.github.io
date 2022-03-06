@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#navig{
+    height: 100vh;
+    position: fixed;
+    transition: 300ms ease;
+}
+
+.title{
+    color:white;
+    background-color:#fd92bb;
+    padding:20px;
+    border-radius:5px;
+}
+.navi{
+    width: 300px;
+    height: 100%;
+}
+
+.navi button{
+    float: right;
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+.navi button i{
+    font-size: 2em;
+}
+
+.navi a{
+    color: #fd92bb;
+    font-weight: 600;
+    transition: 300ms ease;
+    margin: 20px 40px;
+    padding: 10px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+.navi a:hover{
+    background: #fd92bb;
+    color: white;
+    transition: 100ms ease;
+}
+
+.navi i{
+    font-size: 1.5em;
+    padding: 7px;
+}
+
+.navbar{
+    background: #fff;
+}
+
+.navtoggle button{
+    position: relative;
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.navactive a{
+    background:#fd92bb;
+    color: white;
+}
+
+.navactive a::after{
+    content: '';
+    width: 5px;
+    height: 58px;
+    border-radius: 5px;
+    background: #fd92bb;
+    /* color: white; */
+    position: absolute;
+    right: 0;
+}
+.navactive i{
+    background: #fff;
+    border-radius: 10px;
+    color: #fd92bb;
+}
+.sn button{
+    border-radius: 50px 50px;
+    background:  #fd92bb;
+    padding: 0;
+    color: white;
+}
+.sn img{
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}
+.sn .dropdown-toggle{
+    padding: 0 15px 0 0;
+}
+
+#menuBut{
+    display: none;
+}
+.open-btn button{
+    font-size: 1.7em;
+    background: none;
+    border: none;
+    margin: 0 0 0 5px;
+    padding: 0;
+    position: fixed;
+}
+
+.container h2{
+    color:#fd92bb;
+    /* background-color: #fd92bb; */
+    padding: 20px;
+}
+
+.footer{
+    background-color: #fd92bb;
+    position: relative !important;
+    bottom:-20px !important;
+    display:block;
+    align-items: center;
+    padding:10px 0;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.user{
+    color: white; 
+    background-color: #fd92bb;
+    /* margin-right: -100px; */
+    margin-right: 900px;
+    padding: 10px 10px;
+}

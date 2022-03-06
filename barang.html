@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemakaian Barang</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="title">Pemakaian Music Center
+                </li>
+            </ul>
+            <div class="mx-auto"></div>
+            <ul class="navbar-nav navi">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ruangan.html" class="nav-link">Ruangan</a>
+                </li>
+                <li class="nav-item">
+                    <a href="barang.html" class="nav-link">Barang</a>
+                </li>
+            </ul>
+            <div class="mx-auto"></div>
+            <div class="dropdown sn">
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class='bx bx-music' width="100px"></i>
+                    <span style="padding: 60px 15px;">Music Center</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="index.html" class="dropdown-item">Home</a>
+                    </li>
+                    <li>
+                        <a href="ruangan.html" class="dropdown-item">Data Ruangan</a>
+                    </li>
+                    <li>
+                      <a href="barang.html" class="dropdown-item">Data Barang</a>
+                  </li>
+                    <li>
+                        <a href="" class="dropdown-item">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+      <div id="app">
+
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>Music Center</h2>
+                <p class="lead">Use it Properly</p>
+            </div>
+
+            <h4 class="user mb-3">Barang Information</h4>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="idBarang">ID Barang</label>
+                        <div class="input-group">
+                        </div>
+                        <input v-model="idBarang" type="text"class="form-control" id="idBarang" placeholder="Masukkan ID" required>
+                        <div class="invalid-feedback">Your idBarang is required</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="namaBarang">Nama Barang</label>
+                    <input v-model="namaBarang" type="namaBarang" class="form-control" id="namaBarang" placeholder="Masukkan nama" value="" required>
+                    <div class="invalid-feedback">
+                      Valid namaBarang is required.
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="statusBarang">Status Barang</label>
+                    <select v-model="statusBarang" type="statusBarang" class="form-select" aria-label="Default select example">
+                        <option selected disabled>Status Barang</option>
+                        <option value="rusak">Rusak</option>
+                        <option value="tidakrusak">Tidak Rusak</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Valid statusBarang is required.
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6 mb-3">
+                    <label for="tanggalPenggunaanBaarang">Tanggal Penggunaan Barang</label>
+                    <input v-model="tanggalPenggunaanBarang" type="datetime-local" class="form-control" id="tanggalPenggunaanBarang">
+                    <div class="invalid-feedback">
+                      Valid tanggal penggunaan barang is required.
+                    </div>
+                  </div>
+
+
+            <div class="col-md-12">
+                <h4 class="user mb-3">User Data<button class="btn btn-md btn-primary" v-on:click="resetForm()">Choose Barang</button></h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Status Barang</th>
+                        <th>Tanggal Penggunaan Barang</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr v-for="barang in barangs">
+                        <td>{{barang.idBarang}}</td>
+                        <td>{{barang.namaBarang}}</td>
+                        <td>{{barang.statusBarang}}</td>
+                        <td>{{barang.tanggalPenggunaanBarang}}</td>
+                        <td><button class="btn btn-md btn-warning" v-on:click="getEdit(barang)">Edit</button></td>
+                        <td><button class="btn btn-danger" v-on:click="getDelete(barang)">Delete</button></td>
+                    </tr>
+                </table>
+
+                <div v-if="message" class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+                <hr class="mb-4">
+                  <button v-if="!editMode && !deleteMode" v-on:click="createBarang" class="btn btn-primary btn-lg btn-block" type="submit">Submit Data</button>
+                  <button v-if="editMode" v-on:click="updateBarang" class="btn btn-warning btn-lg btn-block" type="submit">Update Data</button>
+                  <button v-if="deleteMode" v-on:click="deleteBarang" class="btn btn-danger btn-lg btn-block" type="submit">Delete Data</button>
+                  
+                </form>
+              
+            </div>
+
+            <div class="footer mt-3 text-muted text-center text-small">
+                <p class="mb-1">&copy; 2021 FTI UNAI</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#">Terms</a></li>
+                  <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+              </footer>
+            </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        var app = new Vue ({
+            el: '#app',
+            data: {
+                errors: [],
+                message: null,
+                barangs:[],
+                barangIdEdit: null,
+                barangIdDelete: null,
+                editMode: false,
+                deleteMode: false,
+                idBarang: '',
+                namaBarang: '',
+                statusBarang: '',
+                tanggalPenggunaanBarang: '',
+            },
+            mounted: function() {
+                this.getBarang();
+            },
+            methods: {
+                getBarang() {
+                    axios.get('https://62175c3c71e7672e537bddf8.mockapi.io/barang')
+                        .then(response => {
+                            this.barangs = response.data;
+                            console.log(response);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                createBarang: function(){
+                    axios.post('https://62175c3c71e7672e537bddf8.mockapi.io/barang', {
+                        idBarang: this.idBarang,
+                        namaBarang: this.namaBarang,
+                        statusBarang: this.statusBarang,
+                        tanggalPenggunaanBarang: this.tanggalPenggunaanBarang,
+                    })
+                    .then(response => {
+                            this.getBarang();
+                            this.message = "Your data has been submitted";
+                            console.log(response);
+                    })
+                    .catch(error => {
+                            console.log(error);
+                    });
+                },
+                resetForm: function () {
+                    this.message = null;
+                    this.editMode = false;
+                    this.deleteMode = false;
+                    this.barangIdEdit = null;
+                    this.idBarang = null;
+                    this.namaBarang = null;
+                    this.statusBarang = null;
+                    this.tanggalPenggunaanBarang= null;
+                },
+                getEdit: function (barang) {
+                    this.message = null;
+                    this.editMode = true;
+                    this.deleteMode = false;
+                    this.barangIdEdit = barang.id;
+                    this.idBarang= barang.idBarang;
+                    this.namaBarang= barang.namaBarang;
+                    this.statusBarang = barang.statusBarang;
+                    this.tanggalPenggunaanBarang = barang.tanggalPenggunaanBarang;
+                },
+                getDelete: function (barang) {
+                    this.message = null;
+                    this.deleteMode = true;
+                    this.editMode = false;
+                    this.barangIdDelete = barang.id;
+                    this.idBarang = barang.idBarang;
+                    this.namaBarang = barang.namaBarang;
+                    this.statusBarang = barang.statusBarang;
+                    this.tanggalPenggunaanBarang = barang.tanggalPenggunaanBarang;
+                },
+                updateBarang: function () {
+                    axios.put(`https://62175c3c71e7672e537bddf8.mockapi.io/barang/${this.barangIdEdit}`, {
+                            idBarang: this.idBarang,
+                            namaBarang: this.namaBarang,
+                            statusBarang: this.statusBarang,
+                            tanggalPenggunaanBarang: this.tanggalPenggunaanBarang,
+                        })
+                        .then(res => {
+                            // handle success
+                            this.message = "Your data has been updated";
+                            this.getBarang();
+                        })
+                        .catch(err => {
+                            // handle error
+                            console.log(err);
+                        })
+                },
+            
+                deleteBarang: function () {
+                    axios.delete(`https://62175c3c71e7672e537bddf8.mockapi.io/barang/${this.barangIdDelete}`)
+                        .then(res => {
+                            // handle success
+                            this.message = "Your data has been deleted";
+                            this.getBarang();
+                        })
+                        .catch(err => {
+                            // handle error
+                            console.log(err);
+                        })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
